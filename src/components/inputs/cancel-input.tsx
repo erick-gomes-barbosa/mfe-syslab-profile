@@ -1,4 +1,5 @@
-export default function CancelInput({ onClick }) {
+// Botão para cancelar uma ação
+export default function CancelInput({ onClick }: { onClick: () => void }) {
   return (
     <input
       onClick={onClick}

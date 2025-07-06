@@ -1,5 +1,14 @@
 import IconAttention from "../../assets/images/icon-attention.svg";
 
+interface CancelModalProps {
+  title: string;
+  text: string;
+  textCancelButton: string; // Texto do botão de cancelamento
+  isOpen: boolean;
+  onClickClose: () => void; // Função para fechar o modal
+  onClickAction: () => void; // Função para ação de cancelamento
+}
+
 export default function CancelModal({
   title,
   text,
@@ -7,7 +16,7 @@ export default function CancelModal({
   isOpen,
   onClickClose,
   onClickAction,
-}) {
+}: CancelModalProps) {
   if (isOpen) {
     return (
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">

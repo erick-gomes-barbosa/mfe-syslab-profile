@@ -1,4 +1,6 @@
 import IconLogout from "../../assets/images/icon-logout.svg";
+
+// Botão para encerrar a sessão do usuário
 export default function CloseSessionInput() {
   return (
     <button

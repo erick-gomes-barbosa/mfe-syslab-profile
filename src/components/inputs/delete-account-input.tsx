@@ -1,5 +1,11 @@
 import IconTrash from "../../assets/images/icon-trash.svg";
-export default function DeleteAccountInput({ onClick }) {
+
+// Botão para excluir a conta do usuário
+export default function DeleteAccountInput({
+  onClick,
+}: {
+  onClick: () => void;
+}) {
   return (
     <button
       type="button"

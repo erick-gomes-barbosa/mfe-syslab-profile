@@ -8,24 +8,17 @@ import { useState } from "react";
 import CloseSessionInput from "./components/inputs/close-session-input";
 import DeleteAccountInput from "./components/inputs/delete-account-input";
 import CancelModal from "./components/modals/cancel-modal";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { UserType } from "./types/user-type";
+import { UserSchema } from "./schemas/user-schema";
 
-interface FormValues {
-  email: string;
-  password: string;
-  registery: number;
-  name: string;
-  type: string;
-  entry_time: string;
-  departure_time: string;
-}
-
-export default function Root(props) {
+export default function Root() {
   const [isEdit, setIsEdit] = useState<boolean>(false);
   const [showDeleteAccountModal, setShowDeleteAccountModal] =
     useState<boolean>(false);
   const [showCancelEditModal, setShowCancelEditModal] =
     useState<boolean>(false);
-  const { register, reset } = useForm<FormValues>({
+  const { register, reset } = useForm<UserType>({
     defaultValues: {
       registery: 1232025120,
       name: "Antonio Manso Pacífico de Oliveira Sossegado",
@@ -33,17 +26,10 @@ export default function Root(props) {
       password: "123@123",
       type: "Aluno",
       entry_time: "08:00",
-      departure_time: "16:00",
+      departure_time: "09:00",
     },
+    resolver: zodResolver(UserSchema),
   });
-
-  const isEditState = () => {
-    if (isEdit) {
-      setIsEdit(false);
-    } else {
-      setIsEdit(true);
-    }
-  };
 
   return (
     <>
@@ -57,7 +43,7 @@ export default function Root(props) {
           {isEdit ? (
             ""
           ) : (
-            <button onClick={isEditState}>
+            <button onClick={() => setIsEdit((prevState) => !prevState)}>
               <img
                 src={IconEdit}
                 alt="ìcone de editar"
