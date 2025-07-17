@@ -12,7 +12,10 @@ export default {
       },
       colors: {
         blueLight: "#EAE7F7",
-        blueMedium: "#2C5B8C",
+        blueMedium: {
+          DEFAULT: "#2C5B8C",
+          50: "rgba(44, 91, 140, 0.5)",
+        },
         grayLight: "#F0F4F8",
         grayPrimary: "#D1D1D1",
         grayMedium: "#555555",

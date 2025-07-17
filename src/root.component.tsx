@@ -33,7 +33,7 @@ export default function Root() {
 
   return (
     <>
-      <form className="relative m-auto mt-28 w-11/12 2xl:max-h-[750px] max-w-[1024px] min-[290px]: h-9/12 max-h-[900px] rounded-3xl shadow-lg shadow-[#00000040] 2xl:py-8 2xl:px-16 p-6">
+      <form className="relative m-auto mt-16 w-11/12 md:max-h-[750px] max-w-[1024px] min-[290px]: h-9/12 max-h-[900px] rounded-3xl shadow-lg shadow-[#00000040] md:py-8 md:px-16 p-6">
         <div className="flex w-full pb-6 last:justify-end">
           <div className="flex-1 text-center">
             <h1 className=" text-grayDark font-bold text-2xl select-none">
@@ -52,7 +52,7 @@ export default function Root() {
             </button>
           )}
         </div>
-        <div className="flex flex-col 2xl:content-between flex-wrap w-full 2xl:max-h-[400px] m-auto my-8 gap-4">
+        <div className="flex flex-col md:content-between flex-wrap w-full md:max-h-[400px] m-auto my-8 gap-4">
           <div className="flex flex-col">
             <LabelForm title="Nome Completo:" />
             <TextboxInput
@@ -69,6 +69,7 @@ export default function Root() {
               name="registery"
               required={true}
               type="text"
+              editLine={isEdit === true && true}
               readOnly={true}
               register={register}
             />
@@ -79,6 +80,7 @@ export default function Root() {
               name="email"
               required={true}
               readOnly={true}
+              editLine={isEdit === true && true}
               type="text"
               register={register}
             />
@@ -100,6 +102,7 @@ export default function Root() {
               name="type"
               required={true}
               readOnly={true}
+              editLine={isEdit === true && true}
               type="text"
               register={register}
             />
