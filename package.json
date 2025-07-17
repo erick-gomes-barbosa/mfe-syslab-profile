@@ -65,7 +65,7 @@
     "single-spa": "^5.9.3",
     "single-spa-react": "^4.3.1",
     "style-loader": "^4.0.0",
-    "zod": "^3.25.74"
+    "zod": "^3.25.76"
   },
   "types": "dist/mfe-syslab-profile.d.ts"
 }
