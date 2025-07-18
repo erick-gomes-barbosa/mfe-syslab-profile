@@ -138,7 +138,11 @@ export default function Root() {
             <DeleteAccountInput
               onClick={() => setShowDeleteAccountModal(true)}
             />
-            <CloseSessionInput />
+            <CloseSessionInput
+              onClick={() => {
+                window.location.pathname = "/users";
+              }}
+            />
           </div>
         )}
         <CancelModal
